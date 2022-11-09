@@ -10,6 +10,7 @@ import Top from "./components/Top";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Login from "./components/Login";
+import Search from "./components/Search";
 
 function App() {
     const APIKEY = "5ceaf6e942fdbf9b158c4e2a5c272c45";
@@ -103,6 +104,7 @@ function App() {
                             </>
                         }
                     ></Route>
+                    <Route path="/search" element={<Search></Search>}></Route>
                     <Route path="/about" element={<About></About>}></Route>
                     <Route path="/contact" element={<Contact></Contact>}></Route>
                     <Route path="/login" element={<Login></Login>}></Route>

@@ -24,6 +24,10 @@ export default function Navbar() {
                             Home
                         </Link>
 
+                        <Link to="/search" class="navbar-item">
+                            Search
+                        </Link>
+
                         <Link to="/about" class="navbar-item">
                             About this Site
                         </Link>
@@ -31,6 +35,7 @@ export default function Navbar() {
                         <Link to="/contact" class="navbar-item">
                             Contact
                         </Link>
+
                         {/* <div class="navbar-item has-dropdown is-hoverable">
                         <a class="navbar-link">More</a>
 
