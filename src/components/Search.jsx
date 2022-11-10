@@ -1,7 +1,7 @@
 import React from "react";
 import GenConvert from "./functions/genreconvertion";
 
-export default function Search({ data }, getData) {
+export default function Search({ data, getData }) {
     let { overview, poster_path, title, genre_ids, id } = data;
 
     let genre1 = GenConvert(genre_ids[0]);
@@ -13,7 +13,7 @@ export default function Search({ data }, getData) {
         <>
             <div className="column is-3">
                 <div className="card" onClick={() => getData(id)}>
-                    <div className="card-image">
+                    <div className="card-image" onClick={() => modal1.classList.toggle("is-active")}>
                         <figure className="image is-4by3">
                             <img src={`https://image.tmdb.org/t/p/w500${poster_path}`} alt="Placeholder image" />
                         </figure>

@@ -12,11 +12,12 @@ import Contact from "./components/Contact";
 import Login from "./components/Login";
 import Search from "./components/Search";
 import Select from "./components/Select";
+import Modal from "./components/Modal";
 
 function App() {
     const APIKEY = "5ceaf6e942fdbf9b158c4e2a5c272c45";
 
-    const [data, setData] = useState({});
+    const [data, setData] = useState();
 
     const [playing, setPlaying] = useState([]);
     const [popular, setPopular] = useState([]);
@@ -31,18 +32,45 @@ function App() {
     const [list4, setList4] = useState([]);
     const [list5, setList5] = useState([]);
 
+    const [movieDetails, setMovieDetails] = useState({});
+
+    let modal1 = document.getElementById("modal1");
+
     const cleanInfo = () => {
         console.log("estoy limpiando la data");
+        setData(0);
     };
 
     const getInfo = (id) => {
         console.log("Estoy recibiendo el ID:", id);
+        axios
+            .get(`https://api.themoviedb.org/3/movie/${id}?api_key=${APIKEY}&language=en-US`)
+            .then((response) => {
+                // handle success
+                setMovieDetails(response.data);
+                //                modal1.classList.add("is-active");
+            })
+            .catch(function (error) {
+                // handle error
+                console.log(error);
+            });
     };
 
+    const search = (evt) => {};
+
+    useEffect(() => {}, [movieDetails]);
+
+    // This UE listen the change in data and enables the use of the getInfo Method and his respectives states
     useEffect(() => {
-        getInfo(data);
+        if (data != 0) {
+            getInfo(data);
+        } else {
+            console.log("La data esta vacia");
+            modal1.classList.remove("is-active");
+        }
     }, [data]);
 
+    // First UE. This makes the fetches to the API and executes the respective assignations of data and loads the content in the page
     useEffect(() => {
         function getPlaying() {
             axios
@@ -151,6 +179,7 @@ function App() {
         getList();
     }, []); // [props || states]
 
+    // Auxiliar UE. This UE checks the list for information and makes the concat in a unique list
     useEffect(() => {
         if (list1.length > 0 && list2.length > 0 && list3.length > 0 && list4.length > 0 && list5.length > 0) {
             let lastArray = list1.concat(list2, list3, list4, list5);
@@ -194,6 +223,11 @@ function App() {
                                         })}
                                     </div>
                                 </div>
+                                {Object.values(movieDetails).length != 0 ? (
+                                    <Modal data={movieDetails} action={() => cleanInfo()}></Modal>
+                                ) : (
+                                    <div></div>
+                                )}
                             </>
                         }
                     ></Route>
@@ -231,6 +265,11 @@ function App() {
                                         })}
                                     </div>
                                 </div>
+                                {Object.values(movieDetails).length != 0 ? (
+                                    <Modal data={movieDetails} action={() => cleanInfo()}></Modal>
+                                ) : (
+                                    <div></div>
+                                )}
                             </>
                         }
                     ></Route>
