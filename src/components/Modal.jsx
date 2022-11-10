@@ -1,7 +1,6 @@
 import React from "react";
 
 export default function Modal({ data, action }) {
-    console.log(data);
     let { genres, homepage, overview, poster_path, release_date, title } = data;
 
     return (

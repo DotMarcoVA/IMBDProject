@@ -56,16 +56,37 @@ function App() {
             });
     };
 
-    const search = (evt) => {};
+    const search = (event) => {
+        let name = document.querySelector("#searchInput").value.toLowerCase();
+        let results = list.filter((movie) => {
+            return movie.title.toLowerCase().includes(name);
+        });
+        setList(results);
+    };
 
-    useEffect(() => {}, [movieDetails]);
+    const genre = (value) => {
+        console.log(value);
+        if (value == "all") {
+            return setList(rawList);
+        }
+        let result = list.filter((movie) => {
+            let gen1 = movie.genre_ids[0];
+            return gen1.includes(value);
+        });
+        setList(result);
+    };
+
+    const topRated = () => {
+        console.log(list[1].vote_average);
+    };
+
+    useEffect(() => {}, [list]);
 
     // This UE listen the change in data and enables the use of the getInfo Method and his respectives states
     useEffect(() => {
         if (data != 0) {
             getInfo(data);
         } else {
-            console.log("La data esta vacia");
             modal1.classList.remove("is-active");
         }
     }, [data]);
@@ -242,12 +263,25 @@ function App() {
                                             <div className="level-item">
                                                 <div class="field has-addons">
                                                     <p class="control">
-                                                        <input class="input is-rounded" type="text" placeholder="Search Movies by Name" />
+                                                        <input
+                                                            class="input is-rounded"
+                                                            id="searchInput"
+                                                            onKeyUp={() =>
+                                                                document.querySelector("#searchInput").addEventListener("keyup", search)
+                                                            }
+                                                            type="text"
+                                                            placeholder="Search Movies by Name"
+                                                        />
                                                     </p>
                                                     <p class="control">
                                                         <button class="button is-rounded">Search</button>
                                                     </p>
                                                 </div>
+                                            </div>
+                                            <div className="level-item">
+                                                <button class="button is-rounded" onClick={() => topRated()}>
+                                                    Best Rated
+                                                </button>
                                             </div>
                                         </div>
                                         <div className="level-right">
@@ -255,7 +289,7 @@ function App() {
                                                 <h2>Filter by Genre</h2>
                                             </div>
                                             <div className="level-item">
-                                                <Select></Select>
+                                                <Select action={(v) => genre(v)}></Select>
                                             </div>
                                         </div>
                                     </div>
@@ -274,7 +308,6 @@ function App() {
                         }
                     ></Route>
                     <Route path="/about" element={<About></About>}></Route>
-                    <Route path="/contact" element={<Contact></Contact>}></Route>
                     <Route path="/login" element={<Login></Login>}></Route>
                     {/* 404 */}
                     <Route path="*" element={<img src="https://http.cat/404"></img>} />

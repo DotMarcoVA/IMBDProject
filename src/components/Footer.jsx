@@ -10,8 +10,8 @@ export default function Footer() {
                     <a href="https://github.com/DotMarcoVA" target="_blank">
                         DotMarcoVA / Marco Valdez Avila
                     </a>
-                    . More forms of contact are available in the <Link to="/contact">Contact</Link> section. For details about the construction
-                    of this site, see the <Link to="/about">About this Site</Link> section.
+                    . More forms of contact and details about the construction of this site, see the <Link to="/about">About this Site</Link>{" "}
+                    section.
                 </p>
             </div>
         </footer>

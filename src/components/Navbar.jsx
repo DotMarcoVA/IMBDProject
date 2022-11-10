@@ -32,10 +32,6 @@ export default function Navbar() {
                             About this Site
                         </Link>
 
-                        <Link to="/contact" class="navbar-item">
-                            Contact
-                        </Link>
-
                         {/* <div class="navbar-item has-dropdown is-hoverable">
                         <a class="navbar-link">More</a>
 

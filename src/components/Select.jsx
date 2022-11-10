@@ -1,9 +1,16 @@
 import React from "react";
 
-export default function Select() {
+export default function Select({ action }) {
     return (
         <div class="select">
-            <select>
+            <select
+                id="genreSelect"
+                onChange={() => {
+                    let e = document.getElementById("genreSelect").value;
+                    action(e);
+                }}
+            >
+                <option value="all">All</option>
                 <option value="28">Action</option>
                 <option value="12">Adventure</option>
                 <option value="16">Animation</option>
