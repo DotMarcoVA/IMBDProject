@@ -1,7 +1,7 @@
 import React from "react";
 import GenConvert from "./functions/genreconvertion";
 
-export default function Top({ data }) {
+export default function Top({ data, getData }) {
     let { overview, poster_path, title, genre_ids, id } = data;
 
     let genre1 = GenConvert(genre_ids[0]);
@@ -12,7 +12,7 @@ export default function Top({ data }) {
     return (
         <>
             <div className="column is-3">
-                <div className="card">
+                <div className="card" onClick={() => getData(id)}>
                     <div className="card-image">
                         <figure className="image is-4by3">
                             <img src={`https://image.tmdb.org/t/p/w500${poster_path}`} alt="Placeholder image" />

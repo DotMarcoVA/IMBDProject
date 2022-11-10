@@ -1,7 +1,7 @@
 import React from "react";
 import GenConvert from "./functions/genreconvertion";
 
-export default function Playing({ data }, getData) {
+export default function Playing({ data, getData }) {
     let { overview, poster_path, title, genre_ids, id } = data;
 
     let genre1 = GenConvert(genre_ids[0]);

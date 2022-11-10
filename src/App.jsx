@@ -31,21 +31,17 @@ function App() {
     const [list4, setList4] = useState([]);
     const [list5, setList5] = useState([]);
 
-    /* let list1 = [];
-    let list2 = [];
-    let list3 = [];
-    let list4 = [];
-    let list5 = []; */
-
-    /* const [rawPlaying, setRawPlaying] = useState([]);
-    const [rawPopular, setRawPopular] = useState([]);
-    const [rawTop, setRawTop] = useState([]); */
-
     const cleanInfo = () => {
-        return setData({});
+        console.log("estoy limpiando la data");
     };
 
-    const getInfo = (id) => {};
+    const getInfo = (id) => {
+        console.log("Estoy recibiendo el ID:", id);
+    };
+
+    useEffect(() => {
+        getInfo(data);
+    }, [data]);
 
     useEffect(() => {
         function getPlaying() {
@@ -94,7 +90,6 @@ function App() {
                 .then((response) => {
                     // handle success
                     setList1(response.data.results);
-                    console.log("Lista 1", list1);
                 })
                 .catch(function (error) {
                     // handle error
@@ -107,7 +102,6 @@ function App() {
                 .then((response) => {
                     // handle success
                     setList2(response.data.results);
-                    console.log("Lista 2", list2);
                 })
                 .catch(function (error) {
                     // handle error
@@ -120,7 +114,6 @@ function App() {
                 .then((response) => {
                     // handle success
                     setList3(response.data.results);
-                    console.log("Lista 3", list3);
                 })
                 .catch(function (error) {
                     // handle error
@@ -133,7 +126,6 @@ function App() {
                 .then((response) => {
                     // handle success
                     setList4(response.data.results);
-                    console.log("Lista 4", list4);
                 })
                 .catch(function (error) {
                     // handle error
@@ -146,7 +138,6 @@ function App() {
                 .then((response) => {
                     // handle success
                     setList5(response.data.results);
-                    console.log("Lista 5", list5);
                 })
                 .catch(function (error) {
                     // handle error
@@ -154,19 +145,20 @@ function App() {
                 });
         }
 
-        function concatArrays() {
-            let lastArray = list1.concat(list2, list3, list4, list5);
-            setList(lastArray);
-            setRawList(lastArray);
-        }
-
         getPlaying();
         getPopular();
         getTop();
         getList();
-        concatArrays();
     }, []); // [props || states]
 
+    useEffect(() => {
+        if (list1.length > 0 && list2.length > 0 && list3.length > 0 && list4.length > 0 && list5.length > 0) {
+            let lastArray = list1.concat(list2, list3, list4, list5);
+            setList(lastArray);
+            setRawList(lastArray);
+        }
+    }, [list1, list2, list3, list4, list5]);
+    //
     return (
         <>
             {/* // NavBar */}
