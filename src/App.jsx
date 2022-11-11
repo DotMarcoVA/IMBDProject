@@ -36,11 +36,13 @@ function App() {
 
     let modal1 = document.getElementById("modal1");
 
+    // Function for erase the Actual Data
     const cleanInfo = () => {
         console.log("estoy limpiando la data");
         setData(0);
     };
 
+    // Function that get the unique info of each movie. Requires: ID
     const getInfo = (id) => {
         console.log("Estoy recibiendo el ID:", id);
         axios
@@ -56,26 +58,32 @@ function App() {
             });
     };
 
+    // Function that enables the input/search bar
     const search = (event) => {
         let name = document.querySelector("#searchInput").value.toLowerCase();
+        console.log("Log");
+        if (!name) {
+            return setList(rawList);
+        }
         let results = list.filter((movie) => {
             return movie.title.toLowerCase().includes(name);
         });
         setList(results);
     };
 
+    // Function that enables the Genres Select
     const genre = (value) => {
-        console.log(value);
         if (value == "all") {
             return setList(rawList);
         }
         let result = list.filter((movie) => {
             let gen1 = movie.genre_ids[0];
-            return gen1.includes(value);
+            return gen1.toString().includes(value);
         });
         setList(result);
     };
 
+    // Function that enables the Top Rated button
     const topRated = () => {
         console.log(list[1].vote_average);
     };
@@ -232,7 +240,7 @@ function App() {
                                     <h2 className="title is-3"> Most Popular </h2>
                                     <div className="columns is-multiline">
                                         {popular.map((p) => {
-                                            return <Popular data={p} getData={(d) => setData(d)}></Popular>;
+                                            return <Playing data={p} getData={(d) => setData(d)}></Playing>;
                                         })}
                                     </div>
                                 </div>
@@ -240,7 +248,7 @@ function App() {
                                     <h2 className="title is-3"> Top Rated </h2>
                                     <div className="columns is-multiline">
                                         {top.map((p) => {
-                                            return <Top data={p} getData={(d) => setData(d)}></Top>;
+                                            return <Playing data={p} getData={(d) => setData(d)}></Playing>;
                                         })}
                                     </div>
                                 </div>
