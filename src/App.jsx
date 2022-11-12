@@ -38,13 +38,11 @@ function App() {
 
     // Function for erase the Actual Data
     const cleanInfo = () => {
-        console.log("estoy limpiando la data");
         setData(0);
     };
 
     // Function that get the unique info of each movie. Requires: ID
     const getInfo = (id) => {
-        console.log("Estoy recibiendo el ID:", id);
         axios
             .get(`https://api.themoviedb.org/3/movie/${id}?api_key=${APIKEY}&language=en-US`)
             .then((response) => {
@@ -60,12 +58,12 @@ function App() {
 
     // Function that enables the input/search bar
     const search = (event) => {
-        let name = document.querySelector("#searchInput").value.toLowerCase();
-        console.log("Log");
+        // let name = document.querySelector("#searchInput").value.toLowerCase();
+        let name = event.target.value;
         if (!name) {
             return setList(rawList);
         }
-        let results = list.filter((movie) => {
+        let results = rawList.filter((movie) => {
             return movie.title.toLowerCase().includes(name);
         });
         setList(results);
@@ -76,7 +74,7 @@ function App() {
         if (value == "all") {
             return setList(rawList);
         }
-        let result = list.filter((movie) => {
+        let result = rawList.filter((movie) => {
             let gen1 = movie.genre_ids[0];
             return gen1.toString().includes(value);
         });
@@ -85,7 +83,9 @@ function App() {
 
     // Function that enables the Top Rated button
     const topRated = () => {
-        console.log(list[1].vote_average);
+        let sortArray = [...list];
+        let sorted = sortArray.sort((a, b) => b.vote_average - a.vote_average);
+        setList(sorted);
     };
 
     useEffect(() => {}, [list]);
@@ -274,15 +274,10 @@ function App() {
                                                         <input
                                                             class="input is-rounded"
                                                             id="searchInput"
-                                                            onKeyUp={() =>
-                                                                document.querySelector("#searchInput").addEventListener("keyup", search)
-                                                            }
+                                                            onKeyUp={(e) => search(e)}
                                                             type="text"
                                                             placeholder="Search Movies by Name"
                                                         />
-                                                    </p>
-                                                    <p class="control">
-                                                        <button class="button is-rounded">Search</button>
                                                     </p>
                                                 </div>
                                             </div>
