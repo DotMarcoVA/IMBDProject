@@ -34,8 +34,6 @@ function App() {
 
     const [movieDetails, setMovieDetails] = useState({});
 
-    let modal1 = document.getElementById("modal1");
-
     // Function for erase the Actual Data
     const cleanInfo = () => {
         setData(0);
@@ -95,6 +93,7 @@ function App() {
         if (data != 0) {
             getInfo(data);
         } else {
+            let modal1 = document.getElementById("modal1");
             modal1.classList.remove("is-active");
         }
     }, [data]);
@@ -253,7 +252,7 @@ function App() {
                                     </div>
                                 </div>
                                 {Object.values(movieDetails).length != 0 ? (
-                                    <Modal data={movieDetails} action={() => cleanInfo()}></Modal>
+                                    <Modal data={movieDetails} k={data} action={() => cleanInfo()}></Modal>
                                 ) : (
                                     <div></div>
                                 )}
