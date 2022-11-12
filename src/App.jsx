@@ -229,7 +229,7 @@ function App() {
                         element={
                             <>
                                 <div className="box">
-                                    <h2 className="title is-3"> Actually Playing </h2>
+                                    <h2 className="title is-3"> Currently Playing </h2>
                                     <div className="columns is-multiline">
                                         {playing.map((p) => {
                                             return <Playing data={p} key={p.id} getData={(d) => setData(d)}></Playing>;
