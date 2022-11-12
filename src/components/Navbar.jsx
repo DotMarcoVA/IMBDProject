@@ -5,52 +5,52 @@ import { Link } from "react-router-dom";
 export default function Navbar() {
     return (
         <header>
-            <nav class="navbar is-black" role="navigation" aria-label="main navigation">
-                <div class="navbar-brand">
-                    <Link class="navbar-item" to="/">
+            <nav className="navbar is-black" role="navigation" aria-label="main navigation">
+                <div className="navbar-brand">
+                    <Link className="navbar-item" to="/">
                         <img src={mainLogo} width="" height="" />
                     </Link>
 
-                    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                    <a role="button" className="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
                         <span aria-hidden="true"></span>
                         <span aria-hidden="true"></span>
                         <span aria-hidden="true"></span>
                     </a>
                 </div>
 
-                <div id="navbarBasicExample" class="navbar-menu">
-                    <div class="navbar-start">
-                        <Link to="/" class="navbar-item">
+                <div id="navbarBasicExample" className="navbar-menu">
+                    <div className="navbar-start">
+                        <Link to="/" className="navbar-item">
                             Home
                         </Link>
 
-                        <Link to="/search" class="navbar-item">
+                        <Link to="/search" className="navbar-item">
                             Search
                         </Link>
 
-                        <Link to="/about" class="navbar-item">
+                        <Link to="/about" className="navbar-item">
                             About this Site
                         </Link>
 
-                        {/* <div class="navbar-item has-dropdown is-hoverable">
-                        <a class="navbar-link">More</a>
+                        {/* <div className="navbar-item has-dropdown is-hoverable">
+                        <a className="navbar-link">More</a>
 
-                        <div class="navbar-dropdown">
-                            <a class="navbar-item">About this Site</a>
-                            <a class="navbar-item">Contact</a>
-                            <hr class="navbar-divider" />
-                            <a class="navbar-item">Report an issue</a>
+                        <div className="navbar-dropdown">
+                            <a className="navbar-item">About this Site</a>
+                            <a className="navbar-item">Contact</a>
+                            <hr className="navbar-divider" />
+                            <a className="navbar-item">Report an issue</a>
                         </div>
                     </div> */}
                     </div>
 
-                    <div class="navbar-end">
-                        <div class="navbar-item">
-                            <div class="buttons">
-                                {/* <a class="button is-primary">
+                    <div className="navbar-end">
+                        <div className="navbar-item">
+                            <div className="buttons">
+                                {/* <a className="button is-primary">
                                 <strong>Sign up</strong>
                             </a> */}
-                                <Link to="/login" class="button is-light">
+                                <Link to="/login" className="button is-light">
                                     Log in
                                 </Link>
                             </div>

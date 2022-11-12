@@ -4,20 +4,20 @@ export default function About() {
     return (
         <div className="box">
             <div className="container ">
-                <h1 class="title has-text-centered">Welcome to my WebApp</h1>
-                <h2 class="subtitle has-text-centered">An academic project</h2>
+                <h1 className="title has-text-centered">Welcome to my WebApp</h1>
+                <h2 className="subtitle has-text-centered">An academic project</h2>
 
                 <div className="container is-flex is-justify-content-space-evenly">
-                    <figure class="image is-128x128 is-inline-block">
+                    <figure className="image is-128x128 is-inline-block">
                         <img className="" src="https://cdn-icons-png.flaticon.com/512/732/732212.png?w=360" />
                     </figure>
-                    <figure class="image is-128x128 is-inline-block">
+                    <figure className="image is-128x128 is-inline-block">
                         <img className="" src="https://logospng.org/download/css-3/logo-css-3-2048.png" />
                     </figure>
-                    <figure class="image is-128x128 is-inline-block">
+                    <figure className="image is-128x128 is-inline-block">
                         <img className="" src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" />
                     </figure>
-                    <figure class="image is-128x128 is-inline-block">
+                    <figure className="image is-128x128 is-inline-block">
                         <img
                             className=""
                             src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png"

@@ -232,7 +232,7 @@ function App() {
                                     <h2 className="title is-3"> Actually Playing </h2>
                                     <div className="columns is-multiline">
                                         {playing.map((p) => {
-                                            return <Playing data={p} getData={(d) => setData(d)}></Playing>;
+                                            return <Playing data={p} key={p.id} getData={(d) => setData(d)}></Playing>;
                                         })}
                                     </div>
                                 </div>
@@ -240,7 +240,7 @@ function App() {
                                     <h2 className="title is-3"> Most Popular </h2>
                                     <div className="columns is-multiline">
                                         {popular.map((p) => {
-                                            return <Playing data={p} getData={(d) => setData(d)}></Playing>;
+                                            return <Playing data={p} key={p.id} getData={(d) => setData(d)}></Playing>;
                                         })}
                                     </div>
                                 </div>
@@ -248,7 +248,7 @@ function App() {
                                     <h2 className="title is-3"> Top Rated </h2>
                                     <div className="columns is-multiline">
                                         {top.map((p) => {
-                                            return <Playing data={p} getData={(d) => setData(d)}></Playing>;
+                                            return <Playing data={p} key={p.id} getData={(d) => setData(d)}></Playing>;
                                         })}
                                     </div>
                                 </div>
@@ -266,13 +266,13 @@ function App() {
                             <>
                                 <div className="box">
                                     <h2 className="title is-3"> Search </h2>
-                                    <div class="level">
+                                    <div className="level">
                                         <div className="level-left">
                                             <div className="level-item">
-                                                <div class="field has-addons">
-                                                    <p class="control">
+                                                <div className="field has-addons">
+                                                    <p className="control">
                                                         <input
-                                                            class="input is-rounded"
+                                                            className="input is-rounded"
                                                             id="searchInput"
                                                             onKeyUp={(e) => search(e)}
                                                             type="text"
@@ -282,7 +282,7 @@ function App() {
                                                 </div>
                                             </div>
                                             <div className="level-item">
-                                                <button class="button is-rounded" onClick={() => topRated()}>
+                                                <button className="button is-rounded" onClick={() => topRated()}>
                                                     Best Rated
                                                 </button>
                                             </div>
@@ -298,7 +298,7 @@ function App() {
                                     </div>
                                     <div className="columns is-multiline">
                                         {list.map((p) => {
-                                            return <Search data={p} getData={(d) => setData(d)}></Search>;
+                                            return <Search data={p} key={p.id} getData={(d) => setData(d)}></Search>;
                                         })}
                                     </div>
                                 </div>

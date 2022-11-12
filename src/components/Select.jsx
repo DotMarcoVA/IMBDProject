@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Select({ action }) {
     return (
-        <div class="select">
+        <div className="select">
             <select
                 id="genreSelect"
                 onChange={() => {

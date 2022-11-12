@@ -2,23 +2,23 @@ import React from "react";
 
 export default function Login() {
     return (
-        <form class="box p-6 m-6">
-            <div class="field">
-                <label class="label">Email</label>
-                <div class="control">
-                    <input class="input" type="email" placeholder="e.g. alex@example.com" />
+        <form className="box p-6 m-6">
+            <div className="field">
+                <label className="label">Email</label>
+                <div className="control">
+                    <input className="input" type="email" placeholder="e.g. alex@example.com" />
                 </div>
             </div>
 
-            <div class="field">
-                <label class="label">Password</label>
-                <div class="control">
-                    <input class="input" type="password" placeholder="********" />
+            <div className="field">
+                <label className="label">Password</label>
+                <div className="control">
+                    <input className="input" type="password" placeholder="********" />
                 </div>
             </div>
 
-            <button class="button is-black">Sign in</button>
-            <button class="button is-white is-text"> Create Account </button>
+            <button className="button is-black">Sign in</button>
+            <button className="button is-white is-text"> Create Account </button>
         </form>
     );
 }

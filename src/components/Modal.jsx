@@ -4,14 +4,14 @@ export default function Modal({ data, action }) {
     let { genres, homepage, overview, poster_path, release_date, title } = data;
 
     return (
-        <div id="modal1" class="modal">
-            <div class="modal-background"></div>
-            <div class="modal-card">
-                <header class="modal-card-head">
-                    <p class="modal-card-title">{`${title} (${release_date})`}</p>
-                    <button class="delete" aria-label="close" onClick={() => action()}></button>
+        <div id="modal1" className="modal">
+            <div className="modal-background"></div>
+            <div className="modal-card">
+                <header className="modal-card-head">
+                    <p className="modal-card-title">{`${title} (${release_date})`}</p>
+                    <button className="delete" aria-label="close" onClick={() => action()}></button>
                 </header>
-                <section class="modal-card-body">
+                <section className="modal-card-body">
                     <figure className="image is-4by3">
                         <img src={`https://image.tmdb.org/t/p/w500${poster_path}`} alt="Placeholder image" />
                     </figure>
