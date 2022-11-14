@@ -24,6 +24,10 @@ export default function Navbar() {
                             Home
                         </Link>
 
+                        <Link to="/categories" className="navbar-item">
+                            Categories
+                        </Link>
+
                         <Link to="/search" className="navbar-item">
                             Search
                         </Link>
@@ -33,15 +37,15 @@ export default function Navbar() {
                         </Link>
 
                         {/* <div className="navbar-item has-dropdown is-hoverable">
-                        <a className="navbar-link">More</a>
+                            <a className="navbar-link">More</a>
 
-                        <div className="navbar-dropdown">
-                            <a className="navbar-item">About this Site</a>
-                            <a className="navbar-item">Contact</a>
-                            <hr className="navbar-divider" />
-                            <a className="navbar-item">Report an issue</a>
-                        </div>
-                    </div> */}
+                            <div className="navbar-dropdown">
+                                <a className="navbar-item">About this Site</a>
+                                <a className="navbar-item">Contact</a>
+                                <hr className="navbar-divider" />
+                                <a className="navbar-item">Report an issue</a>
+                            </div>
+                        </div> */}
                     </div>
 
                     <div className="navbar-end">

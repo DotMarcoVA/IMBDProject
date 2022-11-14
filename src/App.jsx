@@ -13,6 +13,7 @@ import Login from "./components/Login";
 import Search from "./components/Search";
 import Select from "./components/Select";
 import Modal from "./components/Modal";
+import Home from "./components/Home";
 
 function App() {
     const APIKEY = "5ceaf6e942fdbf9b158c4e2a5c272c45";
@@ -33,6 +34,8 @@ function App() {
     const [list5, setList5] = useState([]);
 
     const [movieDetails, setMovieDetails] = useState({});
+
+    let modal1 = document.getElementById("modal1");
 
     // Function for erase the Actual Data
     const cleanInfo = () => {
@@ -93,7 +96,6 @@ function App() {
         if (data != 0) {
             getInfo(data);
         } else {
-            let modal1 = document.getElementById("modal1");
             modal1.classList.remove("is-active");
         }
     }, [data]);
@@ -223,8 +225,9 @@ function App() {
             {/* // Routes to sections of the APP */}
             <main>
                 <Routes>
+                    <Route path="/" element={<Home></Home>}></Route>
                     <Route
-                        path="/"
+                        path="/categories"
                         element={
                             <>
                                 <div className="box">
