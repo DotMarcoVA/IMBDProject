@@ -27,8 +27,8 @@ export default function About() {
 
                 <div className="content mt-2">
                     <p className="subtitle is-5">
-                        This WebApp was developed as an academic project for Kata FrontEnd in Dev.F on November 2022. It was created using
-                        principally HTML, CSS (Using the bulma.io framework) and JavaScript through ReactJS. This project represents all i have
+                        This WebApp was developed as an academic project for Kata FrontEnd in Dev.F on November 2022. It was created using mostly
+                        HTML, CSS (Particularily, the bulma.io framework) and JavaScript through ReactJS. This project represents all i have
                         learned along the course.
                         <br></br>
                         All the source code of this project can be found{" "}
@@ -36,11 +36,11 @@ export default function About() {
                             here
                         </a>
                         <br></br>
-                        This site was developed by DotMarcoVA / Marco Valdez Avila. U can find me through{" "}
+                        This site was developed by DotMarcoVA / Marco Valdez Avila. You may find me on{" "}
                         <a href="https://github.com/DotMarcoVA" target="_blank">
                             Github
                         </a>{" "}
-                        or in this <a href="mailto: antem.marco@gmail.com">Mail</a>
+                        or contact me via this <a href="mailto: antem.marco@gmail.com">Mail</a>
                     </p>
                 </div>
             </div>

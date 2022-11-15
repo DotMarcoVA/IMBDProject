@@ -17,7 +17,7 @@ export default function home() {
                 <div className="content mt-2">
                     <p className="subtitle is-5">
                         In this WebApp you can find information about many movies, such as their release date, overview, genres and promotional
-                        poster. Navigate across the site using the navbar to find what you are interested. Thank you for your visit and I hope
+                        poster. Navigate across the site using the navbar to find what you are interested in. Thank you for your visit and I hope
                         this app will be useful to you
                     </p>
                 </div>
