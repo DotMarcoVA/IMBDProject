@@ -22,11 +22,11 @@ export default function Search({ data, getData }) {
                         <div className="media">
                             <div className="media-content">
                                 <p className="title is-5">{title}</p>
-                                <p className="subtitle is-6">{`${genre1}, ${genre2}`}</p>
+                                {/* <p className="subtitle is-6">{`${genre1}, ${genre2}`}</p> */}
                             </div>
                         </div>
 
-                        <div className="content">{`${cutOverview}`}</div>
+                        {/* <div className="content">{`${cutOverview}`}</div> */}
                     </div>
                 </div>
             </div>

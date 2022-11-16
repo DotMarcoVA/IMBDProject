@@ -77,6 +77,9 @@ function App() {
         }
         let result = rawList.filter((movie) => {
             let gen1 = movie.genre_ids[0];
+            if (movie.genre_ids[1]) {
+                let gen2 = movie.genre_ids[1];
+            }
             return gen1.toString().includes(value);
         });
         setList(result);

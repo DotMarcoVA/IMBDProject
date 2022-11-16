@@ -18,7 +18,7 @@ export default function Playing({ data, getData }) {
                             <img src={`https://image.tmdb.org/t/p/w500${poster_path}`} alt="Placeholder image" />
                         </figure>
                     </div>
-                    <div className="card-content">
+                    {/* <div className="card-content">
                         <div className="media">
                             <div className="media-content">
                                 <p className="title is-5">{title}</p>
@@ -27,7 +27,7 @@ export default function Playing({ data, getData }) {
                         </div>
 
                         <div className="content">{`${cutOverview}`}</div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </>
