@@ -16,25 +16,26 @@ import Modal from "./components/Modal";
 import Home from "./components/Home";
 
 function App() {
+    // Personal API KEY
     const APIKEY = "5ceaf6e942fdbf9b158c4e2a5c272c45";
-
+    // Flag used for the modal
     const [data, setData] = useState();
-
+    // Arrays with data about the movies according to the category
     const [playing, setPlaying] = useState([]);
     const [popular, setPopular] = useState([]);
     const [top, setTop] = useState([]);
-
+    // Lists for Search Section
     const [list, setList] = useState([]);
     const [rawList, setRawList] = useState([]);
-
+    // List to concate in the arrays above
     const [list1, setList1] = useState([]);
     const [list2, setList2] = useState([]);
     const [list3, setList3] = useState([]);
     const [list4, setList4] = useState([]);
     const [list5, setList5] = useState([]);
-
+    // Details about the movie. Displayed on the modal
     const [movieDetails, setMovieDetails] = useState({});
-
+    // Selection of the modal
     let modal1 = document.getElementById("modal1");
 
     // Function for erase the Actual Data
@@ -91,7 +92,7 @@ function App() {
         let sorted = sortArray.sort((a, b) => b.vote_average - a.vote_average);
         setList(sorted);
     };
-
+    // Unused UE
     useEffect(() => {}, [list]);
 
     // This UE listen the change in data and enables the use of the getInfo Method and his respectives states
