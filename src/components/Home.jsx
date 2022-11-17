@@ -5,7 +5,7 @@ export default function home() {
     return (
         <div className="box">
             <div className="container ">
-                <h1 className="title has-text-centered is-family-code">Welcome to MovieWatcher!</h1>
+                <h1 className="title has-text-centered is-family-code">Welcome to MovieTracker!</h1>
                 {/* <h2 className="subtitle has-text-centered"></h2> */}
 
                 <div className="container is-flex is-justify-content-space-evenly">
